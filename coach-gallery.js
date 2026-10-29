@@ -51,10 +51,6 @@ window.coachCollections = [
         "alt": "World Youth Championship · 2025 — photo 1"
       },
       {
-        "src": "assets/coach/world-youth/02.jpg",
-        "alt": "World Youth Championship · 2025 — photo 2"
-      },
-      {
         "src": "assets/coach/world-youth/03.jpg",
         "alt": "World Youth Championship · 2025 — photo 3"
       },
