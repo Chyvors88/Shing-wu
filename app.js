@@ -41,10 +41,9 @@ if (document.body.dataset.page === 'coach' && window.coachCollections) {
   </article>`;
   const gallery = `<section class="section coach-achievements" id="achievements">
     <div class="section-head"><div>${eyebrow('Achievements & accolades')}<h2>THE WORK.<br>THE <span class="accent">MILESTONES.</span></h2></div><p>Competition moments, podium finishes and experiences from Shing Wu’s basketball journey.</p></div>
-    <nav class="collection-jumps" aria-label="Browse coach photo collections"><a href="#competition-results">Competition results ↗</a><a href="#training-experience">Training experience ↗</a><a href="#player-portraits">Portraits ↗</a></nav>
+    <nav class="collection-jumps" aria-label="Browse coach photo collections"><a href="#competition-results">Competition results ↗</a><a href="#training-experience">Training experience ↗</a></nav>
     <div id="competition-results" class="collection-group"><h3 class="collection-heading">Competition results <span>06 competitions</span></h3>${collections.filter(c => c.kind === 'competition').map(renderCollection).join('')}</div>
     <div id="training-experience" class="collection-group"><h3 class="collection-heading">Training experience</h3>${collections.filter(c => c.kind === 'experience').map(renderCollection).join('')}</div>
-    <div id="player-portraits" class="collection-group"><h3 class="collection-heading">Meet the player</h3>${collections.filter(c => c.kind === 'portraits').map(renderCollection).join('')}</div>
   </section><dialog class="photo-dialog" aria-label="Full size coach photo"><div class="photo-dialog-bar"><p class="photo-dialog-title"></p><button class="photo-close" aria-label="Close photo viewer">Close ✕</button></div><img class="photo-dialog-image" alt=""><div class="photo-dialog-controls"><button class="round" data-viewer-step="-1" aria-label="Previous full size photo">←</button><span class="photo-dialog-count" aria-live="polite"></span><button class="round" data-viewer-step="1" aria-label="Next full size photo">→</button></div></dialog>`;
   const lastCTA = pages.coach.lastIndexOf(cta());
   pages.coach = pages.coach.slice(0, lastCTA) + gallery + pages.coach.slice(lastCTA);
