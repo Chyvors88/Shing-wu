@@ -9,10 +9,6 @@ window.coachCollections = [
     "kind": "competition",
     "images": [
       {
-        "src": "assets/coach/youth-cup/01.jpg",
-        "alt": "Youth Cup · 2025 — photo 1"
-      },
-      {
         "src": "assets/coach/youth-cup/02.jpg",
         "alt": "Youth Cup · 2025 — photo 2"
       },
@@ -23,10 +19,6 @@ window.coachCollections = [
       {
         "src": "assets/coach/youth-cup/04.jpg",
         "alt": "Youth Cup · 2025 — photo 4"
-      },
-      {
-        "src": "assets/coach/youth-cup/05.jpg",
-        "alt": "Youth Cup · 2025 — photo 5"
       },
       {
         "src": "assets/coach/youth-cup/06.jpg",
