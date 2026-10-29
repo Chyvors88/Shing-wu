@@ -34,3 +34,10 @@ footer{background:#050505;color:#bcbcbc;border-top:1px solid #6b572d}.footer-top
 @media(max-width:1000px){header{padding:0 4%}header .brand{gap:10px}header .brand b{font-size:24px}nav{gap:15px}nav .btn{padding:16px 17px;gap:16px}}
 @media(max-width:800px){header{height:88px}header .brand-mark{width:58px;height:58px}header .brand b{font-size:25px}header .brand small{font-size:7px;letter-spacing:1.1px}header nav{top:88px;background:#080808;border-bottom:1px solid #8e6c2b}.menu{border-color:#8d794e;color:#ebd39c}.footer-top{align-items:flex-start}.footer-top .brand-mark{width:205px;height:187px}.footer-links{justify-content:flex-start}.collection-jumps{background:none}.hero-video{box-shadow:8px 8px 0 #d1ad5112}}
 @media(max-width:380px){header .brand b{font-size:21px}header .brand small{font-size:6px}header .brand-mark{width:49px;height:49px}.brand{gap:8px}}
+
+/* Keep the entire emblem and wordmark inside their visible bounds. */
+header .brand-mark{border-radius:0;overflow:hidden}
+header .brand-mark img{width:270%;left:-80%;top:-64%}
+.footer-top .brand-mark img{width:190%;left:-45%;top:-48%}
+.brand b{line-height:1.15}.brand small{line-height:1.5}
+@media(max-width:380px){header .brand{min-width:0}header .brand b{font-size:20px;letter-spacing:.5px}header .brand small{letter-spacing:.6px}}
