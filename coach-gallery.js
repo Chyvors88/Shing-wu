@@ -177,14 +177,6 @@ window.coachCollections = [
     "kind": "competition",
     "images": [
       {
-        "src": "assets/coach/milo-cup/01.jpg",
-        "alt": "Milo Cup — photo 1"
-      },
-      {
-        "src": "assets/coach/milo-cup/02.jpg",
-        "alt": "Milo Cup — photo 2"
-      },
-      {
         "src": "assets/coach/milo-cup/03.jpg",
         "alt": "Milo Cup — photo 3"
       }

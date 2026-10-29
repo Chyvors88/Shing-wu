@@ -30,7 +30,7 @@ if (document.body.dataset.page === 'coach' && window.coachCollections) {
     <div class="achievement-copy"><span class="collection-year">${item.year || (item.kind === 'competition' ? 'Competition' : item.label)}</span>
       <h3>${item.title}</h3><span class="placement ${item.kind === 'competition' ? 'medal' : ''}">${item.placement}</span>
       ${item.kind === 'competition' ? `<p>${item.label}${item.year ? ' · ' + item.year : ''}</p>` : ''}
-      <p class="collection-total">${item.video ? '1 video · ' : ''}${item.images.length} photos</p>
+      <p class="collection-total">${item.video ? '1 video · ' : ''}${item.images.length} ${item.images.length === 1 ? 'photo' : 'photos'}</p>
     </div>
     <div class="photo-carousel" role="region" aria-roledescription="carousel" aria-label="${item.title} gallery" data-collection="${item.id}">
       <div class="photo-track" id="track-${item.id}" tabindex="0" aria-label="${item.title}: use left and right arrow keys to browse">
