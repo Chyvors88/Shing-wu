@@ -30,13 +30,14 @@ if (document.body.dataset.page === 'coach' && window.coachCollections) {
     <div class="achievement-copy"><span class="collection-year">${item.year || (item.kind === 'competition' ? 'Competition' : item.label)}</span>
       <h3>${item.title}</h3><span class="placement ${item.kind === 'competition' ? 'medal' : ''}">${item.placement}</span>
       ${item.kind === 'competition' ? `<p>${item.label}${item.year ? ' · ' + item.year : ''}</p>` : ''}
-      <p class="collection-total">${item.images.length} photos</p>
+      <p class="collection-total">${item.video ? '1 video · ' : ''}${item.images.length} photos</p>
     </div>
-    <div class="photo-carousel" role="region" aria-roledescription="carousel" aria-label="${item.title} photos" data-collection="${item.id}">
+    <div class="photo-carousel" role="region" aria-roledescription="carousel" aria-label="${item.title} gallery" data-collection="${item.id}">
       <div class="photo-track" id="track-${item.id}" tabindex="0" aria-label="${item.title}: use left and right arrow keys to browse">
-        ${item.images.map((photo, i) => `<figure class="photo-slide" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${item.images.length}"><button class="photo-open" data-photo="${i}" aria-label="Enlarge ${photo.alt}"><img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" width="1600" height="1200"><span class="photo-enlarge" aria-hidden="true">View full photo ↗</span></button></figure>`).join('')}
+        ${item.video ? `<figure class="photo-slide" role="group" aria-roledescription="slide" aria-label="1 of ${item.images.length + 1}: video"><video class="carousel-video" controls playsinline preload="metadata" poster="${item.video.poster}" aria-label="${item.video.title}" style="display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#171b16"><source src="${item.video.src}" type="video/mp4">Your browser does not support this video.</video></figure>` : ''}
+        ${item.images.map((photo, i) => `<figure class="photo-slide" role="group" aria-roledescription="slide" aria-label="${i + 1 + (item.video ? 1 : 0)} of ${item.images.length + (item.video ? 1 : 0)}"><button class="photo-open" data-photo="${i}" aria-label="Enlarge ${photo.alt}"><img src="${photo.src}" alt="${photo.alt}" loading="lazy" decoding="async" width="1600" height="1200"><span class="photo-enlarge" aria-hidden="true">View full photo ↗</span></button></figure>`).join('')}
       </div>
-      <div class="photo-controls"><span class="photo-count" aria-live="polite" aria-atomic="true">1 / ${item.images.length}</span><span class="swipe-hint">Swipe or use arrows</span><div><button class="round" data-step="-1" aria-label="Previous ${item.title} photo" aria-controls="track-${item.id}" disabled>←</button><button class="round" data-step="1" aria-label="Next ${item.title} photo" aria-controls="track-${item.id}">→</button></div></div>
+      <div class="photo-controls"><span class="photo-count" aria-live="polite" aria-atomic="true">1 / ${item.images.length + (item.video ? 1 : 0)}</span><span class="swipe-hint">Swipe or use arrows</span><div><button class="round" data-step="-1" aria-label="Previous ${item.title} item" aria-controls="track-${item.id}" disabled>←</button><button class="round" data-step="1" aria-label="Next ${item.title} item" aria-controls="track-${item.id}">→</button></div></div>
     </div>
   </article>`;
   const gallery = `<section class="section coach-achievements" id="achievements">
@@ -99,6 +100,7 @@ if (key === 'coach' && window.coachCollections) {
       carousel.querySelector('.photo-count').textContent = `${index + 1} / ${slides.length}`;
       carousel.querySelector('[data-step="-1"]').disabled = index === 0;
       carousel.querySelector('[data-step="1"]').disabled = index === slides.length - 1;
+      track.querySelectorAll('video').forEach(video => {if(!slides[index].contains(video)) video.pause();});
       scheduled = false;
     }
     function go(next) {
@@ -108,6 +110,7 @@ if (key === 'coach' && window.coachCollections) {
     track.addEventListener('scroll', () => {if(!scheduled){scheduled=true;requestAnimationFrame(update);}},{passive:true});
     carousel.querySelectorAll('[data-step]').forEach(button => button.onclick = () => go(index + Number(button.dataset.step)));
     track.addEventListener('keydown', event => {
+      if(event.target.closest('video')) return;
       if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) {
         event.preventDefault();go(event.key === 'Home' ? 0 : event.key === 'End' ? slides.length - 1 : index + (event.key === 'ArrowRight' ? 1 : -1));
       }

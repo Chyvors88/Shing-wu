@@ -390,7 +390,12 @@ window.coachCollections = [
         "src": "assets/coach/pol-ite/48.jpg",
         "alt": "POL-ITE — photo 48"
       }
-    ]
+    ],
+    "video": {
+      "src": "pol-ite-highlights.mp4",
+      "title": "POL-ITE basketball highlights",
+      "poster": "assets/coach/pol-ite/01.jpg"
+    }
   },
   {
     "id": "china-camp",
