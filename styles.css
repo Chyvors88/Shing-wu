@@ -75,3 +75,7 @@ html{scroll-padding-top:110px}header{position:sticky;top:0;z-index:100;height:96
 .review-nav{align-items:center}.review-count{font-size:13px;letter-spacing:1px;color:#d9bb76;margin-right:10px}.reviews .quote{overflow-wrap:anywhere}
 
 .reviews .quote{font-size:clamp(18px,2vw,25px);line-height:1.65;white-space:pre-wrap}
+
+/* Keep the logo tagline consistent with one-to-one coaching. */
+.brand-tagline{display:none}.footer-top .brand-tagline{position:absolute;z-index:1;display:flex;align-items:center;justify-content:center;left:16%;right:16%;top:91.5%;height:8.5%;background:#000;color:#ddd;font:700 8px/1 'DM Sans',sans-serif;letter-spacing:2.2px;white-space:nowrap;text-shadow:0 1px 1px #777}
+@media(max-width:800px){.footer-top .brand-tagline{font-size:7px;letter-spacing:2px}}
