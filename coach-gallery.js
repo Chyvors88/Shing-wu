@@ -119,6 +119,10 @@ window.coachCollections = [
       {
         "src": "assets/coach/taiwan-invitational/15.jpg",
         "alt": "Taiwan International High School Basketball Invitational · 2025 — photo 15"
+      },
+      {
+        "src": "assets/coach/china-camp/01.jpg",
+        "alt": "Taiwan International High School Basketball Invitational · 2025 — photo 16"
       }
     ]
   },
@@ -389,10 +393,6 @@ window.coachCollections = [
     "label": "Training experience",
     "kind": "experience",
     "images": [
-      {
-        "src": "assets/coach/china-camp/01.jpg",
-        "alt": "China Training Camp — photo 1"
-      },
       {
         "src": "assets/coach/china-camp/02.jpg",
         "alt": "China Training Camp — photo 2"
