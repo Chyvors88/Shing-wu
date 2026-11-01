@@ -79,3 +79,13 @@ html{scroll-padding-top:110px}header{position:sticky;top:0;z-index:100;height:96
 /* Keep the logo tagline consistent with one-to-one coaching. */
 .brand-tagline{display:none}.footer-top .brand-tagline{position:absolute;z-index:1;display:flex;align-items:center;justify-content:center;left:16%;right:16%;top:91.5%;height:8.5%;background:#000;color:#ddd;font:700 8px/1 'DM Sans',sans-serif;letter-spacing:2.2px;white-space:nowrap;text-shadow:0 1px 1px #777}
 @media(max-width:800px){.footer-top .brand-tagline{font-size:7px;letter-spacing:2px}}
+
+/* Goals and values copy: readable on small screens and beside the video. */
+.hero h1{font-size:clamp(56px,6.4vw,100px);overflow-wrap:normal}
+.goal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.goal-card{padding:32px;border:1px solid #c7c3b9;background:#fffdf7;display:flex;flex-direction:column;align-items:flex-start}
+.goal-card h3{font-size:clamp(29px,3vw,42px);line-height:1.06;margin:22px 0 8px}
+.goal-card p{font-size:15px;margin-bottom:18px}.goal-card .textlink{margin-top:auto;font-weight:700}
+.values-section .features{margin-top:0}.values-section .feature{border-color:#424242}.values-section .feature p{color:#c4c4c4}
+.cta p{max-width:560px}.cta h2{font-size:clamp(38px,4.2vw,66px)}
+@media(max-width:800px){.hero h1{font-size:clamp(46px,10.6vw,80px)}.goal-grid{grid-template-columns:1fr}.goal-card{padding:26px}.goal-card h3{font-size:34px}}
