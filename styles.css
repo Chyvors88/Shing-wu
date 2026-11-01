@@ -89,3 +89,31 @@ html{scroll-padding-top:110px}header{position:sticky;top:0;z-index:100;height:96
 .values-section .features{margin-top:0}.values-section .feature{border-color:#424242}.values-section .feature p{color:#c4c4c4}
 .cta p{max-width:560px}.cta h2{font-size:clamp(38px,4.2vw,66px)}
 @media(max-width:800px){.hero h1{font-size:clamp(46px,10.6vw,80px)}.goal-grid{grid-template-columns:1fr}.goal-card{padding:26px}.goal-card h3{font-size:34px}}
+
+/* Illustrated goals: clear starting points, visible next actions. */
+.goal-section{background:#f2f2ef}.goal-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.goal-filters button{border:1px solid #c4bda9;border-radius:30px;padding:12px 19px;background:#fffdf7;font-size:13px;font-weight:700;color:var(--ink);transition:background .2s,color .2s}
+.goal-filters button[aria-pressed="true"]{background:#151512;color:#efd48a;border-color:#151512}.goal-filters button:hover{border-color:#a77920}
+.goal-match-count{font-size:12px!important;color:#686355;letter-spacing:.3px;margin:0 0 24px}
+.goal-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.goal-card{padding:0;overflow:hidden;border-color:#d9d3c5;border-radius:12px;transition:transform .2s,box-shadow .2s}
+.goal-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #342b1912}.goal-card[hidden]{display:none!important}
+.goal-visual{position:relative;width:100%;background:#fffdf7;overflow:hidden;aspect-ratio:4/3;flex-shrink:0}
+.goal-visual img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .35s}.goal-card:hover .goal-visual img{transform:scale(1.035)}
+.goal-number{position:absolute;top:18px;left:18px;background:#fffdf7e8;border:1px solid #d7c28d;padding:7px 10px;border-radius:50%;font-size:11px;font-weight:700;color:#6f5318}
+.goal-card-body{padding:28px;display:flex;flex:1;flex-direction:column;align-items:flex-start;width:100%}.goal-card-body .eyebrow{font-size:10px;letter-spacing:1.5px}
+.goal-card h3{font-size:clamp(29px,2.6vw,39px);line-height:1.05;margin:18px 0 0;letter-spacing:-.5px}
+.goal-card p{font-size:14px;line-height:1.75;margin:16px 0 20px;max-width:540px}
+.goal-tags{display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:0 0 24px;list-style:none}.goal-tags li{font-size:10px;padding:7px 10px;border-radius:20px;background:#efe8d7;color:#5f4a1f;font-weight:700}
+.goal-action{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:16px 18px;border:1px solid #bf9c53;border-radius:5px;background:#151512;color:#f2d78f;font-size:13px;font-weight:700;min-height:51px}.goal-action:hover{background:#2b271d}.goal-action>span:last-child{font-size:20px}
+.goal-card:last-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr}.goal-card:last-child .goal-visual{height:100%;aspect-ratio:auto;min-height:300px}
+.goal-grid.is-filtered{grid-template-columns:1fr;max-width:1000px}.goal-grid.is-filtered .goal-card{grid-column:auto;display:grid;grid-template-columns:1fr 1fr}.goal-grid.is-filtered .goal-visual{height:100%;aspect-ratio:auto;min-height:300px}
+@media(max-width:1050px){.goal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.goal-card h3{font-size:34px}}
+@media(max-width:650px){.goal-grid,.goal-grid.is-filtered{grid-template-columns:1fr}.goal-card:last-child,.goal-grid.is-filtered .goal-card{grid-column:auto;display:flex;flex-direction:column}.goal-visual,.goal-card:last-child .goal-visual,.goal-grid.is-filtered .goal-visual{aspect-ratio:4/3;height:auto;min-height:0}.goal-card-body{padding:24px}.goal-card h3{font-size:33px}.goal-filters{gap:8px}.goal-filters button{font-size:12px;padding:11px 14px}.goal-tags li{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.goal-card,.goal-visual img{transition:none}.goal-card:hover,.goal-card:hover .goal-visual img{transform:none}}
+
+/* Still basketball photography with deliberate crops for each goal. */
+.goal-visual img{object-fit:cover;object-position:center;transition:none}.goal-card{transition:none}.goal-card:hover,.goal-card:hover .goal-visual img{transform:none}
+[data-goal-card="parents"] .goal-visual img{object-position:50% 28%}[data-goal-card="beginner"] .goal-visual img{object-position:50% 18%}[data-goal-card="progress"] .goal-visual img{object-position:50% 25%}
+.goal-photo-credits{margin-top:20px;max-width:900px}.goal-photo-credits summary{font-size:12px;font-weight:500;color:#6d675c}.goal-photo-credits p{font-size:12px}.goal-photo-credits a{text-decoration:underline}
+@media(min-width:651px){.goal-grid:not(.is-filtered) .goal-card:last-child{display:flex;flex-direction:column}.goal-grid:not(.is-filtered) .goal-card:last-child .goal-visual{height:auto;min-height:0;aspect-ratio:2/1}.goal-grid:not(.is-filtered) .goal-card:last-child .goal-visual img{object-position:center}}
